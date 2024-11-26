@@ -1,5 +1,6 @@
 import React from 'react';
 
+// Button Component
 const Button = React.forwardRef(({ 
   className = '',
   variant = 'primary',
@@ -38,4 +39,28 @@ const Button = React.forwardRef(({
 
 Button.displayName = 'Button';
 
-export default Button;
+// Demo Component
+const ButtonDemo = () => {
+  return (
+    <div className="p-6 space-y-4">
+      <div className="space-x-4">
+        <Button variant="primary">Request Leave</Button>
+        <Button variant="secondary">Cancel</Button>
+        <Button variant="tertiary">Learn More</Button>
+      </div>
+      
+      <div className="space-x-4">
+        <Button variant="primary" size="sm">Small</Button>
+        <Button variant="primary" size="md">Medium</Button>
+        <Button variant="primary" size="lg">Large</Button>
+      </div>
+      
+      <div className="space-x-4">
+        <Button variant="primary" disabled>Disabled</Button>
+        <Button variant="secondary" disabled>Disabled</Button>
+      </div>
+    </div>
+  );
+};
+
+export default ButtonDemo;
