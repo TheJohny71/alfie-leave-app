@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buttons - Alfie Design System</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.js"></script>
+</head>
+<body class="bg-gray-50">
+    <header class="bg-white border-b border-gray-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16 items-center">
+                <div class="flex items-center">
+                    <a href="/alfie-leave-app/" class="flex items-center">
+                        <div class="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center">
+                            <span class="text-white font-semibold">a</span>
+                        </div>
+                        <h1 class="ml-3 text-xl font-semibold text-gray-900">Buttons</h1>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <!-- Overview -->
+        <section class="mb-12">
+            <h2 class="text-2xl font-semibold text-gray-900 mb-4">Overview</h2>
+            <p class="text-gray-600 mb-6">
+                Buttons are used to trigger actions in the interface. They come in different variants and sizes 
+                to accommodate different use cases and hierarchy needs.
+            </p>
+        </section>
+
+        <!-- Variants -->
+        <section class="mb-12">
+            <h2 class="text-xl font-semibold text-gray-900 mb-4">Variants</h2>
+            
+            <div class="bg-white p-6 rounded-lg border border-gray-200 space-y-6">
+                <!-- Primary Button -->
+                <div>
+                    <h3 class="text-lg font-medium text-gray-900 mb-2">Primary</h3>
+                    <div class="flex items-center gap-4 mb-4">
+                        <button class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
+                            Primary Button
+                        </button>
+                    </div>
+                    <pre class="bg-gray-50 p-4 rounded-lg text-sm">className="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"</pre>
+                </div>
+
+                <!-- Secondary Button -->
+                <div>
+                    <h3 class="text-lg font-medium text-gray-900 mb-2">Secondary</h3>
+                    <div class="flex items-center gap-4 mb-4">
+                        <button class="bg-white border border-gray-300 text-gray-700 px-4 py-2 rounded-lg hover:bg-gray-50">
+                            Secondary Button
+                        </button>
+                    </div>
+                    <pre class="bg-gray-50 p-4 rounded-lg text-sm">className="bg-white border border-gray-300 text-gray-700 px-4 py-2 rounded-lg hover:bg-gray-50"</pre>
+                </div>
+
+                <!-- Tertiary Button -->
+                <div>
+                    <h3 class="text-lg font-medium text-gray-900 mb-2">Tertiary</h3>
+                    <div class="flex items-center gap-4 mb-4">
+                        <button class="text-blue-600 hover:bg-gray-50 px-4 py-2 rounded-lg">
+                            Tertiary Button
+                        </button>
+                    </div>
+                    <pre class="bg-gray-50 p-4 rounded-lg text-sm">className="text-blue-600 hover:bg-gray-50 px-4 py-2 rounded-lg"</pre>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sizes -->
+        <section class="mb-12">
+            <h2 class="text-xl font-semibold text-gray-900 mb-4">Sizes</h2>
+            
+            <div class="bg-white p-6 rounded-lg border border-gray-200">
+                <div class="flex items-center gap-4 mb-6">
+                    <button class="bg-blue-600 text-white px-3 py-1.5 text-sm rounded-lg">
+                        Small
+                    </button>
+                    <button class="bg-blue-600 text-white px-4 py-2 rounded-lg">
+                        Medium
+                    </button>
+                    <button class="bg-blue-600 text-white px-6 py-3 text-lg rounded-lg">
+                        Large
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Usage Guidelines -->
+        <section class="mb-12">
+            <h2 class="text-xl font-semibold text-gray-900 mb-4">Usage Guidelines</h2>
+            
+            <div class="bg-white p-6 rounded-lg border border-gray-200 prose">
+                <ul class="list-disc pl-4 space-y-2 text-gray-600">
+                    <li>Use primary buttons for main actions</li>
+                    <li>Secondary buttons are for alternative actions</li>
+                    <li>Tertiary buttons for supplementary actions</li>
+                    <li>Maintain consistent spacing between buttons (16px)</li>
+                    <li>Use appropriate size based on context and importance</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Accessibility -->
+        <section>
+            <h2 class="text-xl font-semibold text-gray-900 mb-4">Accessibility</h2>
+            
+            <div class="bg-white p-6 rounded-lg border border-gray-200 prose">
+                <ul class="list-disc pl-4 space-y-2 text-gray-600">
+                    <li>All buttons have visible focus states</li>
+                    <li>Color contrast meets WCAG 2.1 AA standards</li>
+                    <li>Interactive states are clearly visible</li>
+                    <li>Disabled states maintain sufficient contrast</li>
+                </ul>
+            </div>
+        </section>
+    </main>
+</body>
+</html>
