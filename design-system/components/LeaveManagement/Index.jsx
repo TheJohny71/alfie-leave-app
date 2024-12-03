@@ -1,4 +1,7 @@
 import React, { useState } from 'react';
+import { GlobalNavigation } from '../Navigation/GlobalNavigation';
+import { NotificationCenter } from '../Navigation/NotificationCenter';
+import { UserPreferences } from '../Navigation/UserPreferences';
 import LeaveRequestFlow from './LeaveRequestFlow';
 import LeaveStatusTracker from './LeaveStatusTracker';
 import LeaveApproval from './LeaveApproval';
@@ -8,7 +11,6 @@ import LeaveBalance from './LeaveBalance';
 const LeaveManagement = () => {
   const [activeView, setActiveView] = useState('dashboard');
   
-  // Sample data
   const sampleData = {
     balances: [
       {
@@ -48,7 +50,6 @@ const LeaveManagement = () => {
 
   const handleNewRequest = (requestData) => {
     console.log('New request:', requestData);
-    // Add request handling logic
   };
 
   const renderView = () => {
@@ -71,43 +72,21 @@ const LeaveManagement = () => {
 
   return (
     <div className="min-h-screen bg-gray-50">
-      {/* Navigation */}
-      <nav className="bg-white border-b border-gray-200">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between h-16">
-            <div className="flex">
-              <div className="flex-shrink-0 flex items-center">
-                <span className="text-xl font-semibold text-gray-900">Alfie</span>
-              </div>
-              <div className="ml-6 flex space-x-8">
-                {[
-                  { name: 'Dashboard', key: 'dashboard' },
-                  { name: 'Request Leave', key: 'request' },
-                  { name: 'My Requests', key: 'status' },
-                  { name: 'Approvals', key: 'approvals' }
-                ].map((item) => (
-                  <button
-                    key={item.key}
-                    onClick={() => setActiveView(item.key)}
-                    className={`inline-flex items-center px-1 pt-1 text-sm font-medium 
-                      ${activeView === item.key 
-                        ? 'border-b-2 border-blue-500 text-gray-900' 
-                        : 'text-gray-500 hover:border-b-2 hover:border-gray-300'
-                      }`}
-                  >
-                    {item.name}
-                  </button>
-                ))}
-              </div>
-            </div>
-          </div>
+      <GlobalNavigation 
+        activeView={activeView}
+        onViewChange={setActiveView}
+      />
+      
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex justify-end space-x-4 py-4">
+          <NotificationCenter notifications={sampleData.notifications} />
+          <UserPreferences />
         </div>
-      </nav>
-
-      {/* Main Content */}
-      <main className="max-w-7xl mx-auto py-6 sm:px-6 lg:px-8">
-        {renderView()}
-      </main>
+        
+        <main className="py-6">
+          {renderView()}
+        </main>
+      </div>
     </div>
   );
 };
