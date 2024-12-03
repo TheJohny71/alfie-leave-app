@@ -28,15 +28,9 @@
             <section class="bg-white p-6 rounded-lg border border-gray-200">
                 <h2 class="text-lg font-semibold text-gray-900 mb-4">Foundation</h2>
                 <ul class="space-y-2">
-                    <li>
-                        <a href="#colors" class="text-blue-600 hover:text-blue-800">Colors</a>
-                    </li>
-                    <li>
-                        <a href="#typography" class="text-blue-600 hover:text-blue-800">Typography</a>
-                    </li>
-                    <li>
-                        <a href="#spacing" class="text-blue-600 hover:text-blue-800">Spacing</a>
-                    </li>
+                    <li><a href="#colors" class="text-blue-600 hover:text-blue-800">Colors</a></li>
+                    <li><a href="#typography" class="text-blue-600 hover:text-blue-800">Typography</a></li>
+                    <li><a href="#spacing" class="text-blue-600 hover:text-blue-800">Spacing</a></li>
                 </ul>
             </section>
 
@@ -44,20 +38,20 @@
             <section class="bg-white p-6 rounded-lg border border-gray-200">
                 <h2 class="text-lg font-semibold text-gray-900 mb-4">Components</h2>
                 <ul class="space-y-2">
+                    <li><a href="#buttons" class="text-blue-600 hover:text-blue-800">Buttons</a></li>
+                    <li><a href="#inputs" class="text-blue-600 hover:text-blue-800">Input Fields</a></li>
+                    <li><a href="#cards" class="text-blue-600 hover:text-blue-800">Cards</a></li>
+                    <li><a href="#calendar" class="text-blue-600 hover:text-blue-800">Calendar</a></li>
+                    <li><a href="#datepicker" class="text-blue-600 hover:text-blue-800">Date Picker</a></li>
                     <li>
-                        <a href="#buttons" class="text-blue-600 hover:text-blue-800">Buttons</a>
-                    </li>
-                    <li>
-                        <a href="#inputs" class="text-blue-600 hover:text-blue-800">Input Fields</a>
-                    </li>
-                    <li>
-                        <a href="#cards" class="text-blue-600 hover:text-blue-800">Cards</a>
-                    </li>
-                    <li>
-                        <a href="#calendar" class="text-blue-600 hover:text-blue-800">Calendar</a>
-                    </li>
-                    <li>
-                        <a href="#datepicker" class="text-blue-600 hover:text-blue-800">Date Picker</a>
+                        <a href="#leave-management" class="text-blue-600 hover:text-blue-800">Leave Management</a>
+                        <ul class="ml-4 mt-2 space-y-2">
+                            <li><a href="#request-flow" class="text-gray-600 hover:text-blue-800">Request Flow</a></li>
+                            <li><a href="#status-tracker" class="text-gray-600 hover:text-blue-800">Status Tracker</a></li>
+                            <li><a href="#approval" class="text-gray-600 hover:text-blue-800">Approval Interface</a></li>
+                            <li><a href="#notifications" class="text-gray-600 hover:text-blue-800">Notifications</a></li>
+                            <li><a href="#balance" class="text-gray-600 hover:text-blue-800">Balance Display</a></li>
+                        </ul>
                     </li>
                 </ul>
             </section>
@@ -66,15 +60,9 @@
             <section class="bg-white p-6 rounded-lg border border-gray-200">
                 <h2 class="text-lg font-semibold text-gray-900 mb-4">Patterns</h2>
                 <ul class="space-y-2">
-                    <li>
-                        <a href="#navigation" class="text-blue-600 hover:text-blue-800">Navigation</a>
-                    </li>
-                    <li>
-                        <a href="#forms" class="text-blue-600 hover:text-blue-800">Forms</a>
-                    </li>
-                    <li>
-                        <a href="#stats" class="text-blue-600 hover:text-blue-800">Statistics</a>
-                    </li>
+                    <li><a href="#navigation" class="text-blue-600 hover:text-blue-800">Navigation</a></li>
+                    <li><a href="#forms" class="text-blue-600 hover:text-blue-800">Forms</a></li>
+                    <li><a href="#stats" class="text-blue-600 hover:text-blue-800">Statistics</a></li>
                 </ul>
             </section>
         </div>
@@ -98,6 +86,59 @@ cd alfie-leave-app</pre>
                     Each component is built using React and Tailwind CSS, ensuring maximum flexibility and maintainability.
                     Check individual component documentation for specific implementation details.
                 </p>
+            </div>
+        </section>
+
+        <!-- Component Documentation -->
+        <section class="mt-12 space-y-12">
+            <!-- Leave Management Section -->
+            <div id="leave-management" class="bg-white p-6 rounded-lg border border-gray-200">
+                <h2 class="text-lg font-semibold text-gray-900 mb-6">Leave Management Components</h2>
+                
+                <!-- Request Flow -->
+                <div id="request-flow" class="mb-8">
+                    <h3 class="text-md font-medium text-gray-900 mb-4">Request Flow</h3>
+                    <div class="prose">
+                        <p class="text-gray-600">A step-by-step wizard for submitting leave requests with smart date selection and team impact preview.</p>
+                        <pre class="bg-gray-50 p-4 rounded-lg mt-2">import { LeaveRequestFlow } from './components/LeaveManagement';</pre>
+                    </div>
+                </div>
+
+                <!-- Status Tracker -->
+                <div id="status-tracker" class="mb-8">
+                    <h3 class="text-md font-medium text-gray-900 mb-4">Status Tracker</h3>
+                    <div class="prose">
+                        <p class="text-gray-600">Real-time tracking of leave request status with visual indicators and timeline.</p>
+                        <pre class="bg-gray-50 p-4 rounded-lg mt-2">import { LeaveStatusTracker } from './components/LeaveManagement';</pre>
+                    </div>
+                </div>
+
+                <!-- Approval Interface -->
+                <div id="approval" class="mb-8">
+                    <h3 class="text-md font-medium text-gray-900 mb-4">Approval Interface</h3>
+                    <div class="prose">
+                        <p class="text-gray-600">Manager dashboard for reviewing and processing leave requests with team coverage insights.</p>
+                        <pre class="bg-gray-50 p-4 rounded-lg mt-2">import { LeaveApproval } from './components/LeaveManagement';</pre>
+                    </div>
+                </div>
+
+                <!-- Notifications -->
+                <div id="notifications" class="mb-8">
+                    <h3 class="text-md font-medium text-gray-900 mb-4">Notifications</h3>
+                    <div class="prose">
+                        <p class="text-gray-600">Real-time notification system for leave request updates and team availability changes.</p>
+                        <pre class="bg-gray-50 p-4 rounded-lg mt-2">import { LeaveNotifications } from './components/LeaveManagement';</pre>
+                    </div>
+                </div>
+
+                <!-- Balance Display -->
+                <div id="balance" class="mb-8">
+                    <h3 class="text-md font-medium text-gray-900 mb-4">Balance Display</h3>
+                    <div class="prose">
+                        <p class="text-gray-600">Visual representation of leave balances with progress tracking and expiry alerts.</p>
+                        <pre class="bg-gray-50 p-4 rounded-lg mt-2">import { LeaveBalance } from './components/LeaveManagement';</pre>
+                    </div>
+                </div>
             </div>
         </section>
     </main>
