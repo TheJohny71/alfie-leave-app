@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notifications - Alfie Design System</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.js"></script>
+</head>
+<body class="bg-gray-50">
+    <header class="bg-white border-b border-gray-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16 items-center">
+                <div class="flex items-center">
+                    <a href="../index.html" class="flex items-center">
+                        <div class="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center">
+                            <span class="text-white font-semibold">a</span>
+                        </div>
+                        <h1 class="ml-3 text-xl font-semibold text-gray-900">Notifications</h1>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <section class="bg-white p-6 rounded-lg border border-gray-200">
+            <h2 class="text-lg font-semibold text-gray-900 mb-4">Overview</h2>
+            <p class="text-gray-600">
+                The Notifications component handles real-time updates for leave requests and team availability changes.
+            </p>
+        </section>
+
+        <section class="mt-8 bg-white p-6 rounded-lg border border-gray-200">
+            <h2 class="text-lg font-semibold text-gray-900 mb-4">Usage</h2>
+            <pre class="bg-gray-50 p-4 rounded-lg">
+import { LeaveNotifications } from './components/LeaveManagement';
+
+const notifications = [
+    {
+        type: 'approved',
+        message: 'Your leave request has been approved',
+        time: '2 hours ago',
+        read: false
+    }
+];
+
+<LeaveNotifications notifications={notifications} />
+            </pre>
+        </section>
+
+        <section class="mt-8 bg-white p-6 rounded-lg border border-gray-200">
+            <h2 class="text-lg font-semibold text-gray-900 mb-4">Props</h2>
+            <div class="overflow-x-auto">
+                <table class="min-w-full divide-y divide-gray-200">
+                    <thead class="bg-gray-50">
+                        <tr>
+                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Prop</th>
+                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Type</th>
+                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Required</th>
+                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Description</th>
+                        </tr>
+                    </thead>
+                    <tbody class="bg-white divide-y divide-gray-200">
+                        <tr>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">notifications</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">array</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Yes</td>
+                            <td class="px-6 py-4 text-sm text-gray-500">Array of notification objects</td>
+                        </tr>
+                        <tr>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">onRead</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">function</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">No</td>
+                            <td class="px-6 py-4 text-sm text-gray-500">Callback when notification is read</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-white border-t border-gray-200 mt-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+            <p class="text-center text-gray-500 text-sm">
+                Alfie Design System - Version 1.0
+            </p>
+        </div>
+    </footer>
+</body>
+</html>
