@@ -1,11 +1,8 @@
-// vite.config.js
-import { defineConfig } from 'vite'
-import react from '@vitejs/plugin-react'
+import { defineConfig } from 'vite';
 
 export default defineConfig({
-  plugins: [react()],
-  base: '/alfie-leave-app/',
+  base: '/alfie-leave-app/', // Add this line with the repository name
   build: {
-    outDir: 'dist'
-  }
-})
+    outDir: 'dist', // Ensure the output directory matches your GitHub Pages deployment
+  },
+});
