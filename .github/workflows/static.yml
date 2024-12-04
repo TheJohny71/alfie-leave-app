@@ -30,11 +30,11 @@ jobs:
 
     - name: Verify Build Directory
       run: |
-        echo "Checking if the build directory exists..."
-        ls -la build # This will show if the build folder is created correctly
+        echo "Checking if the dist directory exists..."
+        ls -la dist # Verify that the 'dist' directory is created after the build process
 
     - name: Deploy to GitHub Pages
       uses: peaceiris/actions-gh-pages@v3
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: ./build
+        publish_dir: ./dist
