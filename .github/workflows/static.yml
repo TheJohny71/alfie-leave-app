@@ -19,7 +19,7 @@ jobs:
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
-    runs-on: ubuntu-22.04  # Explicitly specify Ubuntu 22.04
+    runs-on: ubuntu-22.04
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -28,13 +28,19 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: '18'
-          cache: 'npm'
 
-      - name: Clean install dependencies
-        run: npm ci
+      - name: List files
+        run: ls -la
 
-      - name: Build
-        run: npm run build
+      - name: Install dependencies
+        run: |
+          npm install
+          npm list --depth=0
+
+      - name: Build with debug
+        run: |
+          npm run build
+          ls -la dist/
 
       - name: Setup Pages
         uses: actions/configure-pages@v4
@@ -42,7 +48,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: 'dist'
+          path: './dist'
 
       - name: Deploy to GitHub Pages
         id: deployment
