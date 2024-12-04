@@ -7,7 +7,7 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04 # Explicitly use Ubuntu 22.04 to avoid issues with ubuntu-latest
 
     steps:
     - name: Checkout code
@@ -16,13 +16,22 @@ jobs:
     - name: Set up Node.js
       uses: actions/setup-node@v3
       with:
-        node-version: 16
+        node-version: 16 # Ensure this version matches your project's Node.js requirements
 
     - name: Install dependencies
-      run: npm install
+      run: |
+        echo "Installing dependencies..."
+        npm install
 
     - name: Build project
-      run: npm run build
+      run: |
+        echo "Building project..."
+        npm run build
+
+    - name: Verify Build Directory
+      run: |
+        echo "Checking if the build directory exists..."
+        ls -la build # This will show if the build folder is created correctly
 
     - name: Deploy to GitHub Pages
       uses: peaceiris/actions-gh-pages@v3
