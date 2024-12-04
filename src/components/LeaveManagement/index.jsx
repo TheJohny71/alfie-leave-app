@@ -1,7 +1,6 @@
 import React from 'react';
 import Balance from './Balance';
 import StatusTracker from './StatusTracker';
-import Notifications from './Notifications';
 import RequestFlow from './RequestFlow';
 import Approval from './Approval';
 
@@ -21,6 +20,13 @@ export default function LeaveManagement() {
             total: 10,
             pending: 0,
             expiryDays: 180
+        },
+        {
+            type: 'Personal Leave',
+            used: 2,
+            total: 5,
+            pending: 1,
+            expiryDays: 120
         }
     ];
 
@@ -43,29 +49,52 @@ export default function LeaveManagement() {
         }
     ];
 
+    // Sample data for approval
+    const pendingApproval = {
+        employee: "Jane Smith",
+        department: "Engineering",
+        startDate: "2024-03-20",
+        endDate: "2024-03-25",
+        duration: "5",
+        reason: "Annual family vacation",
+        teamCoverage: [
+            { name: "John Doe", available: true },
+            { name: "Alice Johnson", available: false },
+            { name: "Bob Wilson", available: true }
+        ]
+    };
+
+    const handleApprove = (comments) => {
+        console.log('Approved with comments:', comments);
+    };
+
+    const handleReject = (comments) => {
+        console.log('Rejected with comments:', comments);
+    };
+
     return (
         <div className="space-y-8">
-            <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-6">
-                {/* Leave Balance Card */}
-                <div className="xl:col-span-2">
+            {/* First Row: Balance and Status */}
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                <div className="lg:col-span-2">
                     <Balance balances={leaveBalances} />
                 </div>
-                
-                {/* Status Tracker */}
                 <div>
                     <StatusTracker requests={leaveRequests} />
                 </div>
             </div>
 
+            {/* Second Row: Request Flow and Approval */}
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-                {/* Request Flow Section */}
                 <div>
                     <RequestFlow />
                 </div>
-                
-                {/* Approval Section */}
                 <div>
-                    <Approval />
+                    <Approval 
+                        request={pendingApproval}
+                        onApprove={handleApprove}
+                        onReject={handleReject}
+                    />
                 </div>
             </div>
         </div>
