@@ -6,7 +6,14 @@ export default defineConfig({
   base: '/alfie-leave-app/',
   build: {
     outDir: 'dist',
-    assetsDir: 'assets',
-    sourcemap: true
+    sourcemap: true,
+    rollupOptions: {
+      external: ['lucide-react']
+    }
+  },
+  resolve: {
+    alias: {
+      '@': '/src'
+    }
   }
 })
