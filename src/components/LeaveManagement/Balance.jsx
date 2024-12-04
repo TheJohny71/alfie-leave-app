@@ -1,7 +1,7 @@
 import React from 'react';
 import { Calendar, Clock, Hourglass } from 'lucide-react';
 
-const LeaveBalance = ({ balances }) => {
+const Balance = ({ balances }) => {
   const getProgressColor = (used, total) => {
     const percentage = (used / total) * 100;
     if (percentage > 75) return 'bg-red-500';
@@ -30,7 +30,6 @@ const LeaveBalance = ({ balances }) => {
               </span>
             </div>
 
-            {/* Progress Bar */}
             <div className="relative pt-1">
               <div className="flex items-center justify-between mb-2">
                 <div>
@@ -53,7 +52,6 @@ const LeaveBalance = ({ balances }) => {
               </div>
             </div>
 
-            {/* Additional Info */}
             <div className="grid grid-cols-2 gap-4 pt-2">
               <div className="flex items-center gap-2">
                 <Clock className="w-4 h-4 text-gray-400" />
@@ -72,7 +70,6 @@ const LeaveBalance = ({ balances }) => {
         ))}
       </div>
 
-      {/* Summary Section */}
       <div className="p-6 bg-gray-50 border-t border-gray-200">
         <div className="flex items-center justify-between">
           <span className="text-sm font-medium text-gray-600">
@@ -87,39 +84,4 @@ const LeaveBalance = ({ balances }) => {
   );
 };
 
-// Example Usage
-const LeaveBalanceDemo = () => {
-  const sampleBalances = [
-    {
-      type: 'Annual Leave',
-      used: 10,
-      total: 20,
-      pending: 2,
-      expiryDays: 90
-    },
-    {
-      type: 'Sick Leave',
-      used: 3,
-      total: 10,
-      pending: 0,
-      expiryDays: 180
-    },
-    {
-      type: 'Personal Leave',
-      used: 2,
-      total: 5,
-      pending: 1,
-      expiryDays: 120
-    }
-  ];
-
-  return (
-    <div className="p-6 bg-gray-50 min-h-screen">
-      <div className="max-w-2xl mx-auto">
-        <LeaveBalance balances={sampleBalances} />
-      </div>
-    </div>
-  );
-};
-
-export default LeaveBalanceDemo;
+export default Balance;
